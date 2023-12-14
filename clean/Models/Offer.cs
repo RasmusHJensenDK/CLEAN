@@ -1,9 +1,6 @@
 ﻿using clean.Enums;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace clean.Models
 {
@@ -18,12 +15,17 @@ namespace clean.Models
         public List<Employee> AssignedEmployees { get; set; }
         public List<CleaningService> SelectedServices { get; set; }
         public List<Discount> AppliedDiscounts { get; set; }
+        public DateTime CreatedDate { get; set; } // New property for the creation date
+
 
         public Offer()
         {
             AssignedEmployees = new List<Employee>();
             SelectedServices = new List<CleaningService>();
             AppliedDiscounts = new List<Discount>();
+
+            CreatedDate = DateTime.Now; // Initialize the creation date with the current date and time
+
         }
 
         public void AssignEmployee(Employee employee)
@@ -63,6 +65,11 @@ namespace clean.Models
 
             return totalPrice;
         }
-    }
 
+        public override string ToString()
+        {
+            // Customize this to display relevant information about the offer, including the date
+            return $"{OfferNumber}: {Title} - {Customer?.Name} ({CreatedDate})";
+        }
+    }
 }

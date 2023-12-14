@@ -1,9 +1,6 @@
 ﻿using clean.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace clean.Services
 {
@@ -13,19 +10,34 @@ namespace clean.Services
 
         public EmployeeManager()
         {
-            this.employees = new List<Employee>();
+            employees = new List<Employee>();
+            // Add initialization logic if needed
         }
 
         public void AddEmployee(Employee employee)
         {
             // Add validation logic if needed
-            this.employees.Add(employee);
+            employees.Add(employee);
         }
 
         public List<Employee> GetAllEmployees()
         {
-            return this.employees;
+            return employees;
         }
-    }
 
+        // Add your logic to get available employees
+        public List<Employee> GetAvailableEmployees()
+        {
+            // For example, you might consider employees who are not currently assigned to any offers
+            return employees.Where(e => e.AssignedOffers.Count == 0).ToList();
+        }
+        public void AssignEmployee(Offer offer, Employee employee)
+        {
+            // Add validation or other logic as needed
+            employee.AssignedOffers.Add(offer);
+            offer.AssignEmployee(employee);
+        }
+
+        // Add other methods as needed
+    }
 }
