@@ -1,0 +1,31 @@
+[
+  {
+    "OfferNumber": 1,
+    "Title": "Test",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "test",
+      "Address": "test",
+      "Email": "test",
+      "Phone": "trest"
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "Status": 0,
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "CreatedDate": "2023-12-15T00:04:34.2321812+01:00"
+  }
+]
