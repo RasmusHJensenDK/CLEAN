@@ -1,0 +1,17 @@
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.csproj.AssemblyReference.cache
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.Form1.resources
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.csproj.GenerateResource.cache
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.AssemblyInfoInputs.cache
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.AssemblyInfo.cs
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.csproj.CoreCompileInputs.cache
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\bin\Debug\net6.0-windows\clean.exe
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\bin\Debug\net6.0-windows\clean.deps.json
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\bin\Debug\net6.0-windows\clean.runtimeconfig.json
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\bin\Debug\net6.0-windows\clean.dll
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\bin\Debug\net6.0-windows\clean.pdb
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.dll
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\refint\clean.dll
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.pdb
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\clean.genruntimeconfig.cache
+C:\Users\rhje\Desktop\JobVejle\clean\clean\clean\obj\Debug\net6.0-windows\ref\clean.dll
