@@ -69,6 +69,9 @@ namespace CleaningManagementSystem
             cmbServices = CreateComboBox(new Point(200, 260));
             dtpStartDate = CreateDateTimePicker(new Point(200, 300));
 
+            cmbEmployees.Hide();
+            cmbEmployeeSelection.Hide();
+            cmbServices.Hide();
             this.Controls.AddRange(new Control[] { cmbEmployees, cmbEmployeeSelection, cmbServices, dtpStartDate });
         }
 
@@ -81,10 +84,10 @@ namespace CleaningManagementSystem
             txtCustomerAddress = CreateTextBox(new Point(200, 100));
             txtCustomerEmail = CreateTextBox(new Point(200, 140));
             txtCustomerPhone = CreateTextBox(new Point(200, 180));
-            cmbEmployees = CreateComboBox(new Point(200, 220));
-            cmbServices = CreateComboBox(new Point(200, 260));
-            dtpStartDate = CreateDateTimePicker(new Point(200, 300));
-            txtSelectedService = CreateTextBox(new Point(200, 220));
+            //cmbEmployees = CreateComboBox(new Point(200, 220));
+            //cmbServices = CreateComboBox(new Point(200, 260));
+            //dtpStartDate = CreateDateTimePicker(new Point(200, 300));
+           //txtSelectedService = CreateTextBox(new Point(200, 220));
             this.Controls.Add(txtSelectedService);
             this.Controls.AddRange(new Control[] { txtOfferTitle, txtCustomerName, txtCustomerAddress, txtCustomerEmail, txtCustomerPhone, cmbEmployees, cmbServices, dtpStartDate });
         }
@@ -139,15 +142,15 @@ namespace CleaningManagementSystem
             Label lblCustomerEmail = CreateLabel("Customer Email", new Point(10, 140));
             Label lblCustomerPhone = CreateLabel("Customer Phone", new Point(10, 180));
 
-            Label lblSelectedOffer = CreateLabel("Selected Offer:", new Point(10, 240));
-            Label lblSelectedEmployee = CreateLabel("Selected Employee:", new Point(10, 270));
-            Label lblSelectedService = CreateLabel("Selected Service:", new Point(10, 300));
-            Label lblSelectedDiscount = CreateLabel("Selected Discount:", new Point(10, 330));
+            //Label lblSelectedOffer = CreateLabel("Selected Offer:", new Point(10, 240));
+            //Label lblSelectedEmployee = CreateLabel("Selected Employee:", new Point(10, 270));
+            //Label lblSelectedService = CreateLabel("Selected Service:", new Point(10, 300));
+            //Label lblSelectedDiscount = CreateLabel("Selected Discount:", new Point(10, 330));
 
             Label lblOfferDetailsTitle = CreateLabel("Offer Details", new Point(10, 380));
 
             this.Controls.AddRange(new Control[] { lblOfferTitle, lblCustomerName, lblCustomerAddress, lblCustomerEmail, lblCustomerPhone,
-                                           lblSelectedOffer, lblSelectedEmployee, lblSelectedService, lblSelectedDiscount, lblOfferDetailsTitle });
+                                          /* lblSelectedOffer, lblSelectedEmployee, lblSelectedService, lblSelectedDiscount,*/ lblOfferDetailsTitle });
         }
 
         private TextBox CreateTextBox(Point location)
