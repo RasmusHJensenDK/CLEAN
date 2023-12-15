@@ -1,13 +1,13 @@
 [
   {
     "OfferNumber": 1,
-    "Title": "Test",
+    "Title": "jlk",
     "Customer": {
       "CustomerNumber": 0,
-      "Name": "test",
-      "Address": "test",
-      "Email": "test",
-      "Phone": "trest"
+      "Name": "jlk",
+      "Address": "jlk",
+      "Email": "jlk",
+      "Phone": "jl"
     },
     "ContactPerson": null,
     "Services": [
@@ -22,10 +22,10 @@
         "Price": 75
       }
     ],
-    "Status": 0,
     "AssignedEmployees": [],
     "SelectedServices": [],
     "AppliedDiscounts": [],
-    "CreatedDate": "2023-12-15T00:04:34.2321812+01:00"
+    "Status": 0,
+    "StartDate": "2023-12-15T02:24:52.7213482+01:00"
   }
 ]

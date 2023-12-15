@@ -1,0 +1,21 @@
+[
+    {
+      "EmployeeNumber": 1,
+      "Name": "John Doe",
+      "Specializations": ["Cleaning", "Windows"],
+      "AssignedOffers": []
+    },
+    {
+      "EmployeeNumber": 2,
+      "Name": "Jane Smith",
+      "Specializations": ["Floor", "Bathrooms"],
+      "AssignedOffers": []
+    },
+    {
+      "EmployeeNumber": 3,
+      "Name": "Bob Johnson",
+      "Specializations": ["Kitchen", "Dusting"],
+      "AssignedOffers": []
+    }
+  ]
+  

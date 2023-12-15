@@ -44,7 +44,7 @@ namespace clean.Services
                 AssignedEmployees = new List<Employee>(),
                 SelectedServices = new List<CleaningService>(),
                 AppliedDiscounts = new List<Discount>(),
-                CreatedDate = DateTime.Now // Set the creation date when creating the offer
+                StartDate = DateTime.Now // Set the creation date when creating the offer
             };
 
             offers.Add(offer);
@@ -64,23 +64,22 @@ namespace clean.Services
             File.WriteAllText("offers.json", jsonOffers);
         }
 
-            public void LoadOffersFromJson()
-    {
-        try
+        public void LoadOffersFromJson()
         {
-            // Read JSON from the file
-            string jsonOffers = File.ReadAllText("offers.json");
+            try
+            {
+                // Read JSON from the file
+                string jsonOffers = File.ReadAllText("offers.json");
 
-            // Deserialize JSON to List<Offer>
-            offers = JsonSerializer.Deserialize<List<Offer>>(jsonOffers);
+                // Deserialize JSON to List<Offer>
+                offers = JsonSerializer.Deserialize<List<Offer>>(jsonOffers);
+            }
+            catch (FileNotFoundException)
+            {
+                // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
+                offers = new List<Offer>();
+            }
         }
-        catch (FileNotFoundException)
-        {
-            // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
-            offers = new List<Offer>();
-        }
-    }
-
 
         public void AssignEmployeeToOffer(int offerNumber, Employee employee)
         {
@@ -100,14 +99,26 @@ namespace clean.Services
             }
         }
 
+        // Inside OfferManager class
         public void ApplyDiscountToOffer(int offerNumber, Discount discount)
         {
-            var offer = offers.FirstOrDefault(o => o.OfferNumber == offerNumber);
-            if (offer != null)
+            // Assuming you have a method to get the offer by its offer number
+            Offer offerToUpdate = GetOfferByOfferNumber(offerNumber);
+
+            if (offerToUpdate != null)
             {
-                offer.ApplyDiscount(discount);
+                // Apply the discount to the offer
+                offerToUpdate.ApplyDiscount(discount);
             }
         }
+
+        private Offer GetOfferByOfferNumber(int offerNumber)
+        {
+            // Assuming you have a method to get the offer by its offer number
+            // Implement the logic to find and return the offer with the specified offer number
+            return offers.FirstOrDefault(offer => offer.OfferNumber == offerNumber);
+        }
+
 
         public List<Offer> GetAllOffers()
         {
