@@ -26,6 +26,7 @@ namespace CleaningManagementSystem
         private TextBox txtCustomerPhone;
 
         private ListBox lstOffers;
+        private ListBox lstEmployees;
         private Button btnCreateOffer;
         private ComboBox cmbEmployees;
         private Button btnAssignEmployee;
@@ -44,7 +45,7 @@ namespace CleaningManagementSystem
             cleaningServiceManager = new CleaningServiceManager();
             discountManager = new DiscountManager();
             offerManager.LoadOffersFromJson();  // Call the method to load offers from the JSON file
- 
+
             UpdateOffersListBox();
         }
 
@@ -59,15 +60,15 @@ namespace CleaningManagementSystem
             InitializeButtons();
             InitializeLabels();
             InitializeComboBoxes();
-
+           // UpdateEmployeesListBox();
             this.ResumeLayout(false);
         }
         private void InitializeComboBoxes()
         {
-            cmbEmployees = CreateComboBox(new Point(200, 220));
-            cmbEmployeeSelection = CreateComboBox(new Point(200, 270));
-            cmbServices = CreateComboBox(new Point(200, 260));
-            dtpStartDate = CreateDateTimePicker(new Point(200, 300));
+            cmbEmployees = CreateComboBox(new Point(400, 220));
+            cmbEmployeeSelection = CreateComboBox(new Point(400, 270));
+            cmbServices = CreateComboBox(new Point(400, 260));
+            dtpStartDate = CreateDateTimePicker(new Point(400, 210));
 
             cmbEmployees.Hide();
             cmbEmployeeSelection.Hide();
@@ -79,15 +80,15 @@ namespace CleaningManagementSystem
 
         private void InitializeTextboxes()
         {
-            txtOfferTitle = CreateTextBox(new Point(200, 20));
-            txtCustomerName = CreateTextBox(new Point(200, 60));
-            txtCustomerAddress = CreateTextBox(new Point(200, 100));
-            txtCustomerEmail = CreateTextBox(new Point(200, 140));
-            txtCustomerPhone = CreateTextBox(new Point(200, 180));
+            txtOfferTitle = CreateTextBox(new Point(400, 20));
+            txtCustomerName = CreateTextBox(new Point(400, 60));
+            txtCustomerAddress = CreateTextBox(new Point(400, 100));
+            txtCustomerEmail = CreateTextBox(new Point(400, 140));
+            txtCustomerPhone = CreateTextBox(new Point(400, 180));
             //cmbEmployees = CreateComboBox(new Point(200, 220));
             //cmbServices = CreateComboBox(new Point(200, 260));
             //dtpStartDate = CreateDateTimePicker(new Point(200, 300));
-           //txtSelectedService = CreateTextBox(new Point(200, 220));
+            //txtSelectedService = CreateTextBox(new Point(200, 220));
             this.Controls.Add(txtSelectedService);
             this.Controls.AddRange(new Control[] { txtOfferTitle, txtCustomerName, txtCustomerAddress, txtCustomerEmail, txtCustomerPhone, cmbEmployees, cmbServices, dtpStartDate });
         }
@@ -110,26 +111,35 @@ namespace CleaningManagementSystem
             return dateTimePicker;
         }
 
+private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
+{
+    // Handle the selected index change event for the employees ListBox
+    // You can add your logic here to respond to the selected employee change
+}
 
         private void InitializeListBox()
         {
             lstOffers = new ListBox();
             lstOffers.SelectedIndexChanged += lstOffers_SelectedIndexChanged;
-            lstOffers.Location = new Point(10, 450);
-            lstOffers.Size = new Size(1200, 200);
+            lstOffers.Location = new Point(10, 300);
+            lstOffers.Size = new Size(1228, 300); // Adjust the size as needed
 
-            this.Controls.Add(lstOffers);
+            lstEmployees = new ListBox();
+            lstEmployees.SelectedIndexChanged += lstEmployees_SelectedIndexChanged;
+            lstEmployees.Location = new Point(220, 600);
+            lstEmployees.Size = new Size(0, 0); // Adjust the size as needed
+
+            this.Controls.AddRange(new Control[] { lstOffers, lstEmployees });
         }
-
         private void InitializeButtons()
         {
-            btnCreateOffer = CreateButton("Create Offer", new Point(10, 400), btnCreateOffer_Click);
-            btnAssignEmployee = CreateButton("Assign Employee", new Point(180, 400), btnAssignEmployee_Click);
+            btnCreateOffer = CreateButton("Create Offer", new Point(10, 240), btnCreateOffer_Click);
+            btnAssignEmployee = CreateButton("Assign Employee", new Point(180, 240), btnAssignEmployee_Click);
             //btnSelectService = CreateButton("Select Service", new Point(400, 250), null);
             // btnApplyDiscount = CreateButton("Apply Discount", new Point(600, 250), null);
 
             // btnSelectService = CreateButton("Select Service", new Point(400, 250), btnSelectService_Click);
-            btnApplyDiscount = CreateButton("Apply Discount", new Point(350, 400), btnApplyDiscount_Click);
+            btnApplyDiscount = CreateButton("Apply Discount", new Point(350, 240), btnApplyDiscount_Click);
 
             this.Controls.AddRange(new Control[] { btnCreateOffer, btnAssignEmployee, btnSelectService, btnApplyDiscount });
         }
@@ -266,6 +276,18 @@ namespace CleaningManagementSystem
 
             MessageBox.Show("Offer created successfully!");
         }
+
+        private void UpdateEmployeesListBox()
+        {
+            List<Employee> allEmployees = employeeManager.GetAllEmployees();
+
+            // Set the DisplayMember to the property you want to display in the ListBox
+            lstEmployees.DisplayMember = "Name";  // Change this to the property you want
+
+            lstEmployees.DataSource = null;
+            lstEmployees.DataSource = allEmployees;
+        }
+
 
         private void btnAssignEmployee_Click(object sender, EventArgs e)
         {
