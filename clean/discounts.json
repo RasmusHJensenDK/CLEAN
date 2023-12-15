@@ -1,0 +1,6 @@
+[
+    { "DiscountName": "Employee Discount", "Percentage": 0.05 },
+    { "DiscountName": "New Customer Discount", "Percentage": 0.10 },
+    { "DiscountName": "Bulk Cleaning Discount", "Percentage": 0.15 }
+  ]
+  

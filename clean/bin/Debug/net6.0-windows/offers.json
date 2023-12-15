@@ -1,0 +1,60 @@
+[
+  {
+    "OfferNumber": 1,
+    "Title": "",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "",
+      "Address": "",
+      "Email": "",
+      "Phone": ""
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T02:00:36.0592921+01:00"
+  },
+  {
+    "OfferNumber": 2,
+    "Title": "",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "",
+      "Address": "",
+      "Email": "",
+      "Phone": ""
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T02:00:38.0326204+01:00"
+  }
+]
