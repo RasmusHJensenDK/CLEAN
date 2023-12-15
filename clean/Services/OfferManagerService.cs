@@ -44,7 +44,7 @@ namespace clean.Services
                 AssignedEmployees = new List<Employee>(),
                 SelectedServices = new List<CleaningService>(),
                 AppliedDiscounts = new List<Discount>(),
-                CreatedDate = DateTime.Now // Set the creation date when creating the offer
+                StartDate = DateTime.Now // Set the creation date when creating the offer
             };
 
             offers.Add(offer);
@@ -52,34 +52,54 @@ namespace clean.Services
             SaveOffersToJson();
         }
 
-        private void SaveOffersToJson()
-        {
-            // Serialize the offers list to JSON
-            string jsonOffers = JsonSerializer.Serialize(offers, new JsonSerializerOptions
-            {
-                WriteIndented = true // Makes the JSON readable with indentation
-            });
+private void SaveOffersToJson()
+{
+    // Read existing JSON from the file, if it exists
+    List<Offer> existingOffers = new List<Offer>();
 
-            // Write the JSON to a file (offers.json in the root directory)
-            File.WriteAllText("offers.json", jsonOffers);
-        }
-
-            public void LoadOffersFromJson()
+    try
     {
-        try
-        {
-            // Read JSON from the file
-            string jsonOffers = File.ReadAllText("offers.json");
-
-            // Deserialize JSON to List<Offer>
-            offers = JsonSerializer.Deserialize<List<Offer>>(jsonOffers);
-        }
-        catch (FileNotFoundException)
-        {
-            // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
-            offers = new List<Offer>();
-        }
+        string jsonExistingOffers = File.ReadAllText("offers.json");
+        existingOffers = JsonSerializer.Deserialize<List<Offer>>(jsonExistingOffers);
     }
+    catch (FileNotFoundException)
+    {
+        // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
+    }
+
+    // Add the current offers to the existing ones
+    existingOffers.AddRange(offers);
+
+    // Serialize the combined list to JSON
+    string jsonOffers = JsonSerializer.Serialize(existingOffers, new JsonSerializerOptions
+    {
+        WriteIndented = true // Makes the JSON readable with indentation
+    });
+
+    // Write the JSON back to the file
+    File.WriteAllText("offers.json", jsonOffers);
+}
+
+
+public void LoadOffersFromJson()
+{
+    try
+    {
+        // Read JSON from the file
+        string jsonOffers = File.ReadAllText("offers.json");
+
+        // Deserialize JSON to List<Offer>
+        List<Offer> loadedOffers = JsonSerializer.Deserialize<List<Offer>>(jsonOffers);
+
+        // Merge the loaded offers into the existing list
+        offers.AddRange(loadedOffers);
+    }
+    catch (FileNotFoundException)
+    {
+        // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
+        offers = new List<Offer>();
+    }
+}
 
 
         public void AssignEmployeeToOffer(int offerNumber, Employee employee)
@@ -100,14 +120,26 @@ namespace clean.Services
             }
         }
 
+        // Inside OfferManager class
         public void ApplyDiscountToOffer(int offerNumber, Discount discount)
         {
-            var offer = offers.FirstOrDefault(o => o.OfferNumber == offerNumber);
-            if (offer != null)
+            // Assuming you have a method to get the offer by its offer number
+            Offer offerToUpdate = GetOfferByOfferNumber(offerNumber);
+
+            if (offerToUpdate != null)
             {
-                offer.ApplyDiscount(discount);
+                // Apply the discount to the offer
+                offerToUpdate.ApplyDiscount(discount);
             }
         }
+
+        private Offer GetOfferByOfferNumber(int offerNumber)
+        {
+            // Assuming you have a method to get the offer by its offer number
+            // Implement the logic to find and return the offer with the specified offer number
+            return offers.FirstOrDefault(offer => offer.OfferNumber == offerNumber);
+        }
+
 
         public List<Offer> GetAllOffers()
         {

@@ -1,13 +1,13 @@
 [
   {
     "OfferNumber": 1,
-    "Title": "Test",
+    "Title": "",
     "Customer": {
       "CustomerNumber": 0,
-      "Name": "test",
-      "Address": "test",
-      "Email": "test",
-      "Phone": "trest"
+      "Name": "",
+      "Address": "",
+      "Email": "",
+      "Phone": ""
     },
     "ContactPerson": null,
     "Services": [
@@ -22,10 +22,300 @@
         "Price": 75
       }
     ],
-    "Status": 0,
     "AssignedEmployees": [],
     "SelectedServices": [],
     "AppliedDiscounts": [],
-    "CreatedDate": "2023-12-15T00:04:34.2321812+01:00"
+    "Status": 0,
+    "StartDate": "2023-12-15T03:07:01.506509+01:00"
+  },
+  {
+    "OfferNumber": 1,
+    "Title": "Title",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "Rasmus",
+      "Address": "ringparken",
+      "Email": "pr1nce@live.dk",
+      "Phone": "12322312"
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:09:38.4375277+01:00"
+  },
+  {
+    "OfferNumber": 1,
+    "Title": "Title",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "Rasmus",
+      "Address": "ringparken",
+      "Email": "pr1nce@live.dk",
+      "Phone": "12322312"
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:09:38.4375277+01:00"
+  },
+  {
+    "OfferNumber": 2,
+    "Title": "Title",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "Rasmus",
+      "Address": "ringparken",
+      "Email": "pr1nce@live.dk",
+      "Phone": "12322312"
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:09:53.0003664+01:00"
+  },
+  {
+    "OfferNumber": 1,
+    "Title": "",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "",
+      "Address": "",
+      "Email": "",
+      "Phone": ""
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:10:05.3468881+01:00"
+  },
+  {
+    "OfferNumber": 1,
+    "Title": "",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "",
+      "Address": "",
+      "Email": "",
+      "Phone": ""
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:07:01.506509+01:00"
+  },
+  {
+    "OfferNumber": 1,
+    "Title": "Title",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "Rasmus",
+      "Address": "ringparken",
+      "Email": "pr1nce@live.dk",
+      "Phone": "12322312"
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:09:38.4375277+01:00"
+  },
+  {
+    "OfferNumber": 1,
+    "Title": "Title",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "Rasmus",
+      "Address": "ringparken",
+      "Email": "pr1nce@live.dk",
+      "Phone": "12322312"
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:09:38.4375277+01:00"
+  },
+  {
+    "OfferNumber": 2,
+    "Title": "Title",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "Rasmus",
+      "Address": "ringparken",
+      "Email": "pr1nce@live.dk",
+      "Phone": "12322312"
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:09:53.0003664+01:00"
+  },
+  {
+    "OfferNumber": 1,
+    "Title": "",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "",
+      "Address": "",
+      "Email": "",
+      "Phone": ""
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:10:05.3468881+01:00"
+  },
+  {
+    "OfferNumber": 6,
+    "Title": "",
+    "Customer": {
+      "CustomerNumber": 0,
+      "Name": "",
+      "Address": "",
+      "Email": "",
+      "Phone": ""
+    },
+    "ContactPerson": null,
+    "Services": [
+      {
+        "ServiceNumber": 1,
+        "ServiceName": "Service 1",
+        "Price": 50
+      },
+      {
+        "ServiceNumber": 2,
+        "ServiceName": "Service 2",
+        "Price": 75
+      }
+    ],
+    "AssignedEmployees": [],
+    "SelectedServices": [],
+    "AppliedDiscounts": [],
+    "Status": 0,
+    "StartDate": "2023-12-15T03:12:02.5989218+01:00"
   }
 ]
