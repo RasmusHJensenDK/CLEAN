@@ -52,34 +52,55 @@ namespace clean.Services
             SaveOffersToJson();
         }
 
-        private void SaveOffersToJson()
-        {
-            // Serialize the offers list to JSON
-            string jsonOffers = JsonSerializer.Serialize(offers, new JsonSerializerOptions
-            {
-                WriteIndented = true // Makes the JSON readable with indentation
-            });
+private void SaveOffersToJson()
+{
+    // Read existing JSON from the file, if it exists
+    List<Offer> existingOffers = new List<Offer>();
 
-            // Write the JSON to a file (offers.json in the root directory)
-            File.WriteAllText("offers.json", jsonOffers);
-        }
+    try
+    {
+        string jsonExistingOffers = File.ReadAllText("offers.json");
+        existingOffers = JsonSerializer.Deserialize<List<Offer>>(jsonExistingOffers);
+    }
+    catch (FileNotFoundException)
+    {
+        // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
+    }
 
-        public void LoadOffersFromJson()
-        {
-            try
-            {
-                // Read JSON from the file
-                string jsonOffers = File.ReadAllText("offers.json");
+    // Add the current offers to the existing ones
+    existingOffers.AddRange(offers);
 
-                // Deserialize JSON to List<Offer>
-                offers = JsonSerializer.Deserialize<List<Offer>>(jsonOffers);
-            }
-            catch (FileNotFoundException)
-            {
-                // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
-                offers = new List<Offer>();
-            }
-        }
+    // Serialize the combined list to JSON
+    string jsonOffers = JsonSerializer.Serialize(existingOffers, new JsonSerializerOptions
+    {
+        WriteIndented = true // Makes the JSON readable with indentation
+    });
+
+    // Write the JSON back to the file
+    File.WriteAllText("offers.json", jsonOffers);
+}
+
+
+public void LoadOffersFromJson()
+{
+    try
+    {
+        // Read JSON from the file
+        string jsonOffers = File.ReadAllText("offers.json");
+
+        // Deserialize JSON to List<Offer>
+        List<Offer> loadedOffers = JsonSerializer.Deserialize<List<Offer>>(jsonOffers);
+
+        // Merge the loaded offers into the existing list
+        offers.AddRange(loadedOffers);
+    }
+    catch (FileNotFoundException)
+    {
+        // Handle the case where the file doesn't exist (first run, or offers.json was deleted)
+        offers = new List<Offer>();
+    }
+}
+
 
         public void AssignEmployeeToOffer(int offerNumber, Employee employee)
         {

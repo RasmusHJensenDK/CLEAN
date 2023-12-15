@@ -43,7 +43,8 @@ namespace CleaningManagementSystem
             employeeManager = new EmployeeManager();
             cleaningServiceManager = new CleaningServiceManager();
             discountManager = new DiscountManager();
-
+            offerManager.LoadOffersFromJson();  // Call the method to load offers from the JSON file
+ 
             UpdateOffersListBox();
         }
 
