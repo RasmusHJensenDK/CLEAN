@@ -44,39 +44,39 @@ namespace clean.Models
 
         public void ApplyDiscount(Discount discount)
         {
-            // Add logic to apply the discount to the offer
-            // For example, add the discount to the list of applied discounts
+            
+            
             this.AppliedDiscounts.Add(discount);
 
-            // You might want to recalculate the offer price or perform other actions here
+            
             RecalculateOfferPrice();
         }
 
-        // Method to recalculate the offer price based on services and discounts
+        
         private void RecalculateOfferPrice()
         {
             decimal totalPrice = 0;
 
-            // Calculate the total price of selected services
+            
             foreach (var service in SelectedServices)
             {
                 totalPrice += service.Price;
             }
 
-            // Apply discounts
+            
             foreach (var discount in AppliedDiscounts)
             {
-                // Apply discount percentage to the total price
+                
                 totalPrice -= totalPrice * discount.Percentage;
             }
         }
 
         public void AssignEmployee(Employee employee)
         {
-            // Add logic to assign an employee to the offer
+            
             this.AssignedEmployees.Add(employee);
 
-            // You might want to perform additional actions related to assigning employees here
+            
         }
 
         public void SelectService(CleaningService cleaningservice)

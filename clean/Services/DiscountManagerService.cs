@@ -17,7 +17,7 @@ namespace clean.Services
 
         public void AddDiscount(Discount discount)
         {
-            // Add validation logic if needed
+            // Add validation logic
             this.discounts.Add(discount);
         }
 

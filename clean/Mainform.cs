@@ -44,7 +44,7 @@ namespace CleaningManagementSystem
             employeeManager = new EmployeeManager();
             cleaningServiceManager = new CleaningServiceManager();
             discountManager = new DiscountManager();
-            offerManager.LoadOffersFromJson();  // Call the method to load offers from the JSON file
+            offerManager.LoadOffersFromJson();  
 
             UpdateOffersListBox();
         }
@@ -60,7 +60,7 @@ namespace CleaningManagementSystem
             InitializeButtons();
             InitializeLabels();
             InitializeComboBoxes();
-           // UpdateEmployeesListBox();
+           
             this.ResumeLayout(false);
         }
         private void InitializeComboBoxes()
@@ -85,10 +85,10 @@ namespace CleaningManagementSystem
             txtCustomerAddress = CreateTextBox(new Point(400, 100));
             txtCustomerEmail = CreateTextBox(new Point(400, 140));
             txtCustomerPhone = CreateTextBox(new Point(400, 180));
-            //cmbEmployees = CreateComboBox(new Point(200, 220));
-            //cmbServices = CreateComboBox(new Point(200, 260));
-            //dtpStartDate = CreateDateTimePicker(new Point(200, 300));
-            //txtSelectedService = CreateTextBox(new Point(200, 220));
+            
+            
+            
+            
             this.Controls.Add(txtSelectedService);
             this.Controls.AddRange(new Control[] { txtOfferTitle, txtCustomerName, txtCustomerAddress, txtCustomerEmail, txtCustomerPhone, cmbEmployees, cmbServices, dtpStartDate });
         }
@@ -98,7 +98,7 @@ namespace CleaningManagementSystem
             ComboBox comboBox = new ComboBox();
             comboBox.Location = location;
             comboBox.Size = new Size(200, 20);
-            // You may need to populate the combo box with employees or services here if needed
+            
             return comboBox;
         }
 
@@ -107,14 +107,14 @@ namespace CleaningManagementSystem
             DateTimePicker dateTimePicker = new DateTimePicker();
             dateTimePicker.Location = location;
             dateTimePicker.Size = new Size(200, 20);
-            // Set any additional properties as needed, such as format, min date, max date, etc.
+            
             return dateTimePicker;
         }
 
 private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
 {
-    // Handle the selected index change event for the employees ListBox
-    // You can add your logic here to respond to the selected employee change
+    
+    
 }
 
         private void InitializeListBox()
@@ -122,12 +122,12 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
             lstOffers = new ListBox();
             lstOffers.SelectedIndexChanged += lstOffers_SelectedIndexChanged;
             lstOffers.Location = new Point(10, 300);
-            lstOffers.Size = new Size(1228, 300); // Adjust the size as needed
+            lstOffers.Size = new Size(1228, 300); 
 
             lstEmployees = new ListBox();
             lstEmployees.SelectedIndexChanged += lstEmployees_SelectedIndexChanged;
             lstEmployees.Location = new Point(220, 600);
-            lstEmployees.Size = new Size(0, 0); // Adjust the size as needed
+            lstEmployees.Size = new Size(0, 0); 
 
             this.Controls.AddRange(new Control[] { lstOffers, lstEmployees });
         }
@@ -135,10 +135,10 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnCreateOffer = CreateButton("Create Offer", new Point(10, 240), btnCreateOffer_Click);
             btnAssignEmployee = CreateButton("Assign Employee", new Point(180, 240), btnAssignEmployee_Click);
-            //btnSelectService = CreateButton("Select Service", new Point(400, 250), null);
-            // btnApplyDiscount = CreateButton("Apply Discount", new Point(600, 250), null);
+            
+            
 
-            // btnSelectService = CreateButton("Select Service", new Point(400, 250), btnSelectService_Click);
+            
             btnApplyDiscount = CreateButton("Apply Discount", new Point(350, 240), btnApplyDiscount_Click);
 
             this.Controls.AddRange(new Control[] { btnCreateOffer, btnAssignEmployee, btnSelectService, btnApplyDiscount });
@@ -152,15 +152,15 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
             Label lblCustomerEmail = CreateLabel("Customer Email", new Point(10, 140));
             Label lblCustomerPhone = CreateLabel("Customer Phone", new Point(10, 180));
 
-            //Label lblSelectedOffer = CreateLabel("Selected Offer:", new Point(10, 240));
-            //Label lblSelectedEmployee = CreateLabel("Selected Employee:", new Point(10, 270));
-            //Label lblSelectedService = CreateLabel("Selected Service:", new Point(10, 300));
-            //Label lblSelectedDiscount = CreateLabel("Selected Discount:", new Point(10, 330));
+            
+            
+            
+            
 
             Label lblOfferDetailsTitle = CreateLabel("Offer Details", new Point(10, 380));
 
             this.Controls.AddRange(new Control[] { lblOfferTitle, lblCustomerName, lblCustomerAddress, lblCustomerEmail, lblCustomerPhone,
-                                          /* lblSelectedOffer, lblSelectedEmployee, lblSelectedService, lblSelectedDiscount,*/ lblOfferDetailsTitle });
+                                           lblOfferDetailsTitle });
         }
 
         private TextBox CreateTextBox(Point location)
@@ -173,26 +173,26 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
 
         private void btnSelectService_Click(object sender, EventArgs e)
         {
-            // Assuming you have a method to get available services from your service manager
+            
             List<CleaningService> availableServices = cleaningServiceManager.GetAllCleaningServices();
 
-            // Assuming you have a method to show a dialog for service selection
+            
             CleaningService selectedService = ShowServiceSelectionDialog(availableServices);
 
             if (selectedService != null)
             {
-                // Assuming you have a TextBox to display the selected service
-                // Replace "txtSelectedService" with the actual name of your TextBox
+                
+                
                 txtSelectedService.Text = selectedService.ToString();
             }
         }
 
-        // Helper method to show a dialog for service selection
+        
         private CleaningService ShowServiceSelectionDialog(List<CleaningService> availableServices)
         {
-            // Implement your logic to show a dialog for service selection
-            // You can use MessageBox, custom dialog form, or any other method
-            // Return the selected service or null if the user cancels the selection
+            
+            
+            
             return null;
         }
 
@@ -281,8 +281,8 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Employee> allEmployees = employeeManager.GetAllEmployees();
 
-            // Set the DisplayMember to the property you want to display in the ListBox
-            lstEmployees.DisplayMember = "Name";  // Change this to the property you want
+            
+            lstEmployees.DisplayMember = "Name";  
 
             lstEmployees.DataSource = null;
             lstEmployees.DataSource = allEmployees;
@@ -297,7 +297,7 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
 
                 List<Employee> availableEmployees = employeeManager.GetAllEmployees();
 
-                // Populate cmbEmployeeSelection with available employees
+                
                 cmbEmployeeSelection.Items.Clear();
                 cmbEmployeeSelection.Items.AddRange(availableEmployees.ToArray());
 
@@ -305,7 +305,7 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
 
                 if (selectedEmployee != null)
                 {
-                    // Your existing logic...
+                    
                     employeeManager.AddEmployee(selectedEmployee);
 
                     MessageBox.Show($"Employee {selectedEmployee.Name} assigned to Offer {selectedOffer.Title}!");
@@ -324,8 +324,8 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
 
             List<Offer> allOffers = offerManager.GetAllOffers();
 
-            // Set the DisplayMember to the property you want to display in the ListBox
-            lstOffers.DisplayMember = "Title";  // Change this to the property you want
+            
+            lstOffers.DisplayMember = "Title";  
 
             lstOffers.DataSource = null;
             lstOffers.DataSource = allOffers;
@@ -393,31 +393,31 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
         }
         private void btnApplyDiscount_Click(object sender, EventArgs e)
         {
-            // Example:
+            
             if (lstOffers.SelectedItem != null)
             {
                 Offer selectedOffer = (Offer)lstOffers.SelectedItem;
 
-                // Assuming you have a method in DiscountManager to get available discounts
+                
                 List<Discount> availableDiscounts = discountManager.GetAllDiscounts();
 
-                // Assuming you have a method in your UI to show a dialog for discount selection
+                
                 Discount selectedDiscount = ShowDiscountSelectionDialog(availableDiscounts);
 
                 if (selectedDiscount != null)
                 {
-                    // Assuming you have a method in OfferManager to apply a discount to an offer
+                    
                     offerManager.ApplyDiscountToOffer(selectedOffer.OfferNumber, selectedDiscount);
 
-                    // Update the UI to reflect the applied discount
-                    // For example, you can update a label or TextBox to display the applied discount.
+                    
+                    
 
                     MessageBox.Show($"Discount {selectedDiscount.DiscountName} applied to Offer {selectedOffer.Title}!");
 
-                    // Additional logic as needed
-                    // ...
+                    
+                    
 
-                    // Update the list of offers
+                    
                     UpdateOffersListBox();
                 }
             }
@@ -430,7 +430,7 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
 
         private Discount ShowDiscountSelectionDialog(List<Discount> availableDiscounts)
         {
-            // Create a form or dialog to display available discounts and allow the user to select one
+            
             using (var discountSelectionForm = new DiscountSelectionForm(availableDiscounts))
             {
                 DialogResult result = discountSelectionForm.ShowDialog();
@@ -440,7 +440,7 @@ private void lstEmployees_SelectedIndexChanged(object sender, EventArgs e)
                     return discountSelectionForm.SelectedDiscount;
                 }
 
-                // User canceled the selection
+                
                 return null;
             }
         }

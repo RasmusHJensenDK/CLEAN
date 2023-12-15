@@ -13,7 +13,6 @@ namespace clean.Services
         public Offer AssociatedOffer { get; set; }
         public DateTime StartDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
-        // Additional properties for task details
     }
 
 }

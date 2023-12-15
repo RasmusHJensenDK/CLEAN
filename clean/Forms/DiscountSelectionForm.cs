@@ -27,7 +27,7 @@ namespace CleaningManagementSystem
             this.btnSelect = new Button();
             this.btnCancel = new Button();
             
-            // Initialize other form properties, such as size, location, etc.
+            
 
             this.Controls.Add(lstDiscounts);
             this.Controls.Add(btnSelect);

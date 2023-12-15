@@ -18,7 +18,7 @@ namespace clean.Services
 
         public void AddCleaningService(CleaningService cleaningService)
         {
-            // Add validation logic if needed
+            // Add validation logic
             this.cleaningServices.Add(cleaningService);
         }
 
